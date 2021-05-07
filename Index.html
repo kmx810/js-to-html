@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                font-family: sans-serif;
+            }
+            #list div{
+                text-align: center;
+                border: 2px solid black;
+                margin: 0 auto;
+                width: 500px;
+            }
+            h3{
+                padding: 10px;
+            }
+            img{
+                height: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="list">
+
+        </div>
+
+        <script>
+            let listEl = document.getElementById("list");
+            let elems = [
+                {name: "Bulba", id: 1, pic: "https://cdn2.bulbagarden.net/upload/2/21/001Bulbasaur.png"},
+                {name: "Charmander", id: 2, pic: "https://cdn2.bulbagarden.net/upload/7/73/004Charmander.png"},
+                {name: "Squirtle", id: 3, pic: "https://cdn2.bulbagarden.net/upload/3/39/007Squirtle.png"},
+                {name: "Torchic", id: 4, pic: "https://cdn2.bulbagarden.net/upload/9/91/255Torchic.png"}
+            ];
+
+            for(let elem of elems){
+                let pokeEl = document.createElement("div");
+                let pokeImg = document.createElement("img");
+                let pokeName = document.createElement("h3");
+                pokeName.appendChild(document.createTextNode("#" + elem["id"] + " " + elem["name"]));
+                pokeEl.appendChild(pokeName);
+                pokeImg.setAttribute("src", elem["pic"]);
+                pokeEl.appendChild(pokeImg);
+                listEl.appendChild(pokeEl);
+            }
+             
+        </script>
+    </body>
+</html>
